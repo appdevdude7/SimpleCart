@@ -1,2 +1,0 @@
-# SimpleCart
-Created with CodeSandbox
