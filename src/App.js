@@ -1,14 +1,32 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./styles.css";
+
+import SinglePage from "./components/SinglePage";
 
 export default function App() {
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-      <button type="button" className="btn btn-primary">
-        Primary
-      </button>
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/product">Home</Link>
+            </li>
+            <li>
+              <Link to="/product">Product</Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/product">
+            <SinglePage />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
